@@ -8,7 +8,7 @@ pipeline {
         }
         stage('analysis') {
             steps {
-                sh 'echo "analysis"'
+                sh 'mvn clean verify sonar:sonar'
             }
         }
         stage('build') {
