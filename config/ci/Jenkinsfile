@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('analysis') {
+            steps {
+                sh 'echo "analysis"'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+        stage('deploy stage'){
+            steps {
+                            sh 'echo "deploy stage"'
+                        }
+        }
+    }
+}
